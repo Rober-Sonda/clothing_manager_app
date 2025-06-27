@@ -1,14 +1,49 @@
 Sistema de Gestión Integral de Tienda de Ropa y Accesorios
-Este proyecto se centra en el desarrollo de una aplicación de escritorio de vanguardia para la gestión completa y eficiente de tiendas de ropa y accesorios. Desde la gestión de inventario altamente detallada hasta el análisis financiero y la proyección de compras, esta aplicación busca ser una herramienta indispensable para optimizar las operaciones diarias y estratégicas del negocio.
+Este proyecto se centra en el desarrollo de una aplicación web de vanguardia para la gestión completa y eficiente de tiendas de ropa y accesorios. Desde la gestión de inventario altamente detallada hasta el análisis financiero y la proyección de compras, esta aplicación busca ser una herramienta indispensable para optimizar las operaciones diarias y estratégicas del negocio.
 
-Construida con Flutter para una experiencia de usuario fluida y nativa, y Isar Database para una gestión de datos local rápida y flexible, la aplicación adopta una Arquitectura Limpia para garantizar escalabilidad, mantenibilidad y un desarrollo profesional.
+Construida con HTML5, CSS3 y JavaScript para una experiencia de usuario interactiva y dinámica en el navegador, la aplicación adopta una Arquitectura Limpia para garantizar escalabilidad, mantenibilidad y un desarrollo profesional. Actualmente, los datos son simulados localmente con datastore.js, pero se recomienda una base de datos persistente para una implementación completa.
 
+📋 Tabla de Contenidos
 Características Principales y Funcionalidades
+
+1. Control de Usuarios y Roles Seguros
+
+2. Gestión Avanzada de Inventario y Productos
+
+3. Vistas de Artículos Optimizadas
+
+4. Gestión de Compras y Órdenes de Compra
+
+5. Gestión de Ventas y Carrito de Compras (POS)
+
+6. Sistema de Calificación (Rating) Integral
+
+7. Informes y Proyecciones Estratégicas
+
+8. Cuenta Corriente de Clientes
+
+9. Módulo de Gestión Financiera (Ingresos y Egresos)
+
+10. Gestión de Cierre de Caja por Usuario
+
+Arquitectura Técnica y Estructura del Proyecto
+
+Estructura Conceptual de la Base de Datos - Modelos Ampliados
+
+Consideraciones de Escalabilidad y Conectividad
+
+Instalación y Ejecución (Conceptual)
+
+Contribuir
+
+Licencia
+
+✨ Características Principales y Funcionalidades
 La aplicación ofrecerá un conjunto de características robustas y bien integradas, cubriendo todos los aspectos críticos de la gestión de una tienda:
 
 1. Control de Usuarios y Roles Seguros
 
-Autenticación y Autorización: Sistema de login seguro con diferentes roles (Administrador, Gerente, Vendedor) y permisos granularmente definidos para controlar el acceso a las funcionalidades.
+Autenticación y Autorización: Sistema de login seguro con diferentes roles (Administrador, Gerente, Vendedor) y permisos definidos para controlar el acceso a las funcionalidades.
 
 Gestión de Perfiles: Cada usuario tendrá su propio perfil, permitiendo un seguimiento claro de las operaciones realizadas.
 
@@ -120,44 +155,44 @@ Listados de Ventas por Turno/Usuario: Generación de informes específicos por u
 
 Consolidación Diaria/Periódica: Sumario de los cierres de caja individuales para obtener un balance general de la caja de la tienda.
 
-Arquitectura Técnica y Estructura del Proyecto
+🛠️ Arquitectura Técnica y Estructura del Proyecto
 El proyecto seguirá los principios de Clean Architecture para una separación de preocupaciones clara, facilitando el testing, la escalabilidad y el mantenimiento:
 
-Flutter (Dart): Framework principal para el desarrollo de la aplicación de escritorio, aprovechando su rendimiento y capacidades multiplataforma.
+Tecnologías Web (HTML5, CSS3, JavaScript): Frameworks y lenguajes principales para el desarrollo de la aplicación web, aprovechando su universalidad y capacidades interactivas en el navegador.
 
-Base de Datos Isar:
+Base de Datos (Sugerencia):
 
-Rendimiento y Flexibilidad: Elegida por su velocidad y su naturaleza NoSQL de colecciones/documentos, ideal para las propiedades dinámicas de los productos y sus variantes.
+Para una aplicación web que requiera persistencia de datos y funcionalidades en tiempo real sin una infraestructura de backend compleja, se sugiere Firebase Firestore. Es una base de datos NoSQL basada en la nube, que ofrece sincronización en tiempo real, consultas flexibles y es ideal para datos estructurados con propiedades dinámicas (como tus productos y variantes).
 
-Almacenamiento Local: Datos persistentes y de alto rendimiento directamente en el dispositivo del usuario.
+Para escenarios que demanden mayor control sobre el servidor, lógica de negocio compleja en el backend o bases de datos relacionales, una opción sería un stack con Node.js (para el backend) y PostgreSQL o MySQL (como base de datos relacional).
 
 Navegación:
 
-goRouter: Implementado para una gestión de rutas declarativa y robusta, asegurando una navegación eficiente y una URL limpia (aunque sea una app de escritorio, ayuda a la estructura interna).
+HTML5 History API / Hash Routing: Implementado para una gestión de rutas declarativa y robusta, asegurando una navegación eficiente y una URL limpia dentro de la aplicación de una sola página (SPA).
 
 Estructura del Proyecto (Clean Architecture):
 
-domain: Contiene las entidades de negocio (e.g., Product, ProductVariant, User, Client, PropertyDefinition, ProductProperty), casos de uso (use cases) y contratos (interfaces/repositories). Independiente de frameworks.
+domain: Contiene las entidades de negocio (e.g., Product, ProductVariant, User, Client, PropertyDefinition, ProductProperty), casos de uso (use cases) y contratos (interfaces/repositories). Independiente de la tecnología de UI o persistencia.
 
-data: Implementaciones de los contratos del dominio, lógica para interactuar con la base de datos Isar y fuentes de datos externas.
+data: Implementaciones de los contratos del dominio, lógica para interactuar con la fuente de datos elegida (actualmente datastore.js para simulación; en una implementación real, sería la integración con Firebase Firestore SDK o una API REST de un backend).
 
-presentation: La capa de UI (Widgets de Flutter), lógica de presentación (Providers/BLoC/Cubit) y la configuración de rutas.
+presentation: La capa de UI (HTML, CSS), lógica de presentación (JavaScript para manipulación del DOM y eventos) y la configuración de rutas en el navegador.
 
 Diseño y Estilo:
 
-Diseño Moderno y Profesional: Enfoque en una interfaz de usuario limpia, intuitiva y estéticamente agradable, utilizando los principios de Material Design adaptados a escritorio.
+Diseño Moderno y Profesional: Enfoque en una interfaz de usuario limpia, intuitiva y estéticamente agradable, utilizando principios de diseño responsive y la flexibilidad de CSS3.
 
 Gestión de Colores: Todos los colores estarán centralizados en clases y constantes para una fácil gestión y consistencia del tema.
 
-Fuentes Responsivas (util_screen): Se utilizará una utilidad (referida como util_screen o similar) para gestionar los tamaños de fuente de manera responsiva, asegurando legibilidad en diferentes resoluciones de pantalla.
+Fuentes Responsivas: Se gestionarán los tamaños de fuente de manera responsiva, asegurando legibilidad en diferentes resoluciones de pantalla.
 
 Vistas Dedicadas por Modelo: Cada modelo de datos principal (Producto, Cliente, Proveedor, Venta, Compra, etc.) tendrá sus propias vistas dedicadas para Agregar, Editar y Listar, garantizando una experiencia de usuario consistente.
 
-Estructura de la Base de Datos (Isar) - Modelos Ampliados
+Estructura Conceptual de la Base de Datos - Modelos Ampliados
 
-La base de datos Isar se estructuraría con colecciones robustas para cada entidad, permitiendo la flexibilidad necesaria. Se empleará una combinación de modelos separados y objetos embebidos para optimizar el rendimiento y la consistencia, abordando directamente la eficiencia en la gestión de propiedades y categorías:
+La base de datos se estructuraría con colecciones/tablas robustas para cada entidad, permitiendo la flexibilidad necesaria. Se empleará una combinación de modelos separados y objetos embebidos para optimizar el rendimiento y la consistencia, abordando directamente la eficiencia en la gestión de propiedades y categorías. Estos modelos son conceptuales y adaptables a bases de datos NoSQL (como Firestore) o relacionales.
 
-User Colección: id, username, passwordHash, role (String: 'admin', 'manager', 'sales'), isActive (bool), lastLogin (DateTime).
+User Colección: id (identificador único), username, passwordHash, role (String: 'admin', 'manager', 'sales'), isActive (bool), lastLogin (DateTime).
 
 Product Colección (Producto Base / Modelo):
 
@@ -213,7 +248,7 @@ suggestedPropertyDefinitionIds (List - IDs de PropertyDefinition que son comúnm
 
 PropertyDefinition Colección (Nueva):
 
-id (IsarId)
+id (identificador único)
 
 name (String, ej., "Talla", "Material", "Mecanismo", "Fragancia", "Volumen", "Temporada"). Define la propiedad en sí.
 
@@ -295,40 +330,39 @@ paymentMethodBreakdown (Map<String, double> - desglose de ventas por método de 
 
 notes (String - opcional, para comentarios del cierre).
 
-Consideraciones de Escalabilidad y Conectividad
-Esta aplicación está diseñada con un enfoque inicial en un único punto de venta (POS) de escritorio, utilizando Isar como base de datos local para un rendimiento óptimo. Sin embargo, se ha tenido en cuenta la facilidad de expansión para futuras necesidades:
+☁️ Consideraciones de Escalabilidad y Conectividad
+Esta aplicación, diseñada como una SPA web, utiliza datastore.js para simular la persistencia local. Sin embargo, se ha tenido en cuenta la facilidad de expansión para futuras necesidades reales:
 
-Múltiples Terminales/PCs: La arquitectura de Clean Architecture y la separación de la capa de datos permitirían una futura integración con una base de datos centralizada (ej. Firebase Firestore, PostgreSQL) o un sistema de sincronización para múltiples terminales de forma eficiente, sin requerir reescrituras significativas de la lógica de negocio y la UI.
+Múltiples Usuarios/Terminales Web: La arquitectura de Clean Architecture y la separación de la capa de datos permitirían una futura integración con una base de datos centralizada en la nube (ej. Firebase Firestore, Supabase, o un backend con PostgreSQL/MongoDB) para sincronizar datos entre múltiples navegadores o dispositivos de forma eficiente.
 
-Acceso desde Aplicación Móvil: La misma estructura de dominio y casos de uso facilitaría el desarrollo de una aplicación móvil complementaria, que podría consumir los mismos datos a través de una API centralizada (si se implementara) o un servicio de sincronización en la nube, permitiendo la consulta de información en tiempo real desde dispositivos móviles. Esto aseguraría que la inversión inicial en la lógica de negocio de la aplicación de escritorio se pueda reutilizar en diferentes plataformas.
+Acceso desde Aplicación Móvil: La misma estructura de dominio y casos de uso facilitaría el desarrollo de una aplicación móvil complementaria (nativa o híbrida), que podría consumir los mismos datos a través de una API centralizada (si se implementara) o un servicio de sincronización en la nube, permitiendo la consulta y gestión de información en tiempo real desde dispositivos móviles. Esto aseguraría que la inversión inicial en la lógica de negocio se pueda reutilizar en diferentes plataformas.
 
-Instalación y Ejecución (Conceptual)
-Para poner en marcha esta aplicación (una vez desarrollada):
+🚀 Instalación y Ejecución (Conceptual)
+Para poner en marcha esta aplicación web (una vez desarrollada, y asumiendo una estructura de archivos HTML/CSS/JS estándar):
 
 Clonar el repositorio:
 
 git clone [URL_DEL_REPOSITORIO]
 cd nombre_del_proyecto
 
-Instalar dependencias de Flutter:
+Abrir con un servidor local: Puedes usar extensiones como "Live Server" en VS Code, o iniciar un servidor HTTP simple desde la terminal:
 
-flutter pub get
+Usando Live Server (VS Code): Abre la carpeta del proyecto en VS Code, haz clic derecho en index.html y selecciona "Open with Live Server".
 
-Habilitar soporte de escritorio:
+Usando Python (si tienes Python instalado):
 
-flutter config --enable-windows-desktop # o --enable-macos-desktop, --enable-linux-desktop
+python3 -m http.server
 
-Generar archivos Isar (si se usa build_runner):
+Usando http-server (si tienes Node.js y npm instalados):
 
-flutter pub run build_runner build --delete-conflicting-outputs
+npm install -g http-server # Instalar una vez
+http-server
 
-Ejecutar la aplicación:
+Acceder en el navegador: Una vez que el servidor esté corriendo, abre tu navegador y ve a la dirección provista por el servidor (ej. http://localhost:5500/ o http://127.0.0.1:8000/).
 
-flutter run -d windows # o macos, linux
-
-Contribuir
+🤝 Contribuir
 Este es un proyecto ambicioso y se valoran enormemente las contribuciones. Si estás interesado en mejorar la aplicación, corregir errores o añadir nuevas funcionalidades, por favor, consulta las directrices de contribución (a ser definidas) y envía un Pull Request.
 
-Licencia
+📄 Licencia
 Este proyecto está bajo la Licencia MIT.
 
